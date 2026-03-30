@@ -11,11 +11,14 @@ H3: Participants who read the individual story first, followed by the
 general story, will exhibit higher emotional arousal than participants 
 who read the stories in reverse order.
 
-Goal: Investigation how personalization through a fictitious individual 
+## Overview Study Design
+
+### Goal: 
+Investigation how personalization through a fictitious individual 
 protagonist affects emotional engagement compared to a generalized control 
 version, including potential order (priming) effects. 
 
-Methodology:
+### Methodology:
 
 • Two closely matched HG data-story versions that isolate the effect
 of an individual protagonist (first-person, character-based) versus a
@@ -28,7 +31,7 @@ viewing behavior, and self-reported valence and engagement.
 • A time-resolved analysis linking physiological responses to story
 segments and elements to identify emotionally salient components.
 
-Results:
+### Results:
 
 The results indicate higher physiological measures associated with
 increased emotional engagement for the character-based story, particularly 
@@ -37,4 +40,4 @@ engagement mainly as curiosity and negative empathic emotions.
 Participants who viewed the individual character story first tended 
 to show higher emotional engagement than those who first saw the general story.
 
-Story Prototypes: https://github.com/bbdataviz/Bergen-Project--Data-Analysis-Visualization
+*Story Prototypes:* https://github.com/bbdataviz/Bergen-Project--Data-Analysis-Visualization
