@@ -1,4 +1,4 @@
-Hypothesis Testing
+## Hypothesis Testing
 
 H1: Including a fictitious, individual character who embodies a 
 patient’s lived experience will elicit increased emotional arousal
