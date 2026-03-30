@@ -5,7 +5,7 @@ library(psych)
 library(epitools)
 
 # story level
-Eda_summary = read.csv("/Users/bea/Documents/MastersThesis/EXDA/datasets/Eda-summaries-Ind+Gen/Eda-summary-arousalmean-HG.csv")
+Eda_summary = read.csv("https://raw.githubusercontent.com/bbdataviz/Emotional-Engagement--Biometric-Data-Analysis/refs/heads/main/data/Eda-summary-arousalmean-HG.csv")
 
 # filter
 # ALL
@@ -56,7 +56,7 @@ summary_B_ind <- summary_B %>%
 summary_B_gen <- summary_B %>%
   filter(story == "xgen")
 
-### H1: Electrodermal Activity Data (Individual vs General Story)
+# H1: Electrodermal Activity Data (Individual vs General Story)
 
 # STORY 1 (Normal distribution test (shapiro))
 shapiro.test(summary_story1$amp_per_min) # p-value = 0.02054 *
@@ -89,6 +89,8 @@ describe(summary_story1_gen)
 
 # Story elements analysis (Eye-Tracking)
 
+story_element = read.csv("https://raw.githubusercontent.com/bbdataviz/Emotional-Engagement--Biometric-Data-Analysis/refs/heads/main/data/story-element_char_illu.csv")
+
 story_element_ind <- story_element %>%
   filter(Group == 'char_ind')
 
@@ -101,9 +103,10 @@ riskratio(story_element$Group, story_element$value, conf.level = 0.95)
 describe(story_element_ind) # M = 0.21, SD = 0.4
 describe(story_element_genx) # M = 0.1, SD = 0.29 
 
-### H2: Negative empathic emotions (Self-reported on a multiple-choice questionnaire with 20 emotions)
+###
+# H2: Negative empathic emotions (Self-reported on a multiple-choice questionnaire with 20 emotions)
 
-emotions <- read.csv("/Users/bea/Documents/MastersThesis/EXDA/datasets/emotions/emotions-valence-sad-depressed-miserable-anxious.csv")
+emotions <- read.csv("https://raw.githubusercontent.com/bbdataviz/Emotional-Engagement--Biometric-Data-Analysis/refs/heads/main/data/emotions-valence-sad-depressed-miserable-anxious.csv")
 emotions_ind <- emotions %>%
   filter(story == "ind")
 emotions_gen <- emotions %>%
@@ -116,7 +119,7 @@ describe(emotions_ind)
 describe(emotions_gen)
 
 # curious
-emotions <- read.csv("/Users/bea/Documents/MastersThesis/EXDA/datasets/emotions/emotions-storypieces-first.csv")
+emotions <- read.csv("https://raw.githubusercontent.com/bbdataviz/Emotional-Engagement--Biometric-Data-Analysis/refs/heads/main/data/emotions-storypieces-first.csv")
 emotions_ind <- emotions %>%
   filter(story == "ind")
 emotions_gen <- emotions %>%
@@ -128,8 +131,8 @@ t.test(curious ~ story, data = emotions) # 16.78 > 12.14
 describe(emotions_ind) # sd = 6.58
 describe(emotions_gen) # sd = 5.46
 
-### H3: Priming Effects (Electrodermal Activity)
-
+###
+# H3: Priming Effects (Electrodermal Activity)
 shapiro.test(Eda_summary$amp_per_min) # p-value = 0.005452 **
 shapiro.test(Eda_summary$max_peak) # p-value = 0.008969 **
 shapiro.test(Eda_summary$max_amp_sum) # p-value = 0.1516 normal
