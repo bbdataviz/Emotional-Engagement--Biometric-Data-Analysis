@@ -20,9 +20,11 @@ Methodology:
 • Two closely matched HG data-story versions that isolate the effect
 of an individual protagonist (first-person, character-based) versus a
 generalized perspective (third-person).
+
 • A mixed-methods study (N=26) combining continuous EDA, eye
 tracking, and questionnaires to capture emotional arousal dynamics,
 viewing behavior, and self-reported valence and engagement.
+
 • A time-resolved analysis linking physiological responses to story
 segments and elements to identify emotionally salient components.
 
