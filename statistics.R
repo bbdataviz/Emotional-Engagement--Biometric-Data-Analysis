@@ -56,12 +56,10 @@ summary_B_ind <- summary_B %>%
 summary_B_gen <- summary_B %>%
   filter(story == "xgen")
 
-# H1: Individul vs General Story
+# H1: Electrodermal Activity Data (Individual vs General Story)
 
 # STORY 1 (Normal distribution test (shapiro))
-shapiro.test(summary_story1$eda_arousal_min) # p-value = 0.02357 *
 shapiro.test(summary_story1$amp_per_min) # p-value = 0.02054 *
-shapiro.test(summary_story1$n_amp_per_min) # p-value = 0.5474 normal
 shapiro.test(summary_story1$max_peak) # p-value = 0.08115 normal
 shapiro.test(summary_story1$max_amp_sum) # p-value = 0.2534 normal
 shapiro.test(summary_story1$viewtime_sec) # p-value = 0.3665 normal
@@ -89,7 +87,7 @@ cohen.d(viewtime_sec ~ story, data = summary_story1) # Cohen's d = 0.62, 95% CI 
 describe(summary_story1_ind)
 describe(summary_story1_gen)
 
-# Story elements analysis
+# Story elements analysis (Eye-Tracking)
 
 story_element_ind <- story_element %>%
   filter(Group == 'char_ind')
@@ -104,7 +102,8 @@ describe(story_element_ind) # M = 0.21, SD = 0.4
 describe(story_element_genx) # M = 0.1, SD = 0.29 
 
 ###
-# H2: Negative empathic emotions
+# H2: Negative empathic emotions (Self-reported on a multiple-choice questionnaire with 20 emotions)
+
 emotions <- read.csv("/Users/bea/Documents/MastersThesis/EXDA/datasets/emotions/emotions-valence-sad-depressed-miserable-anxious.csv")
 emotions_ind <- emotions %>%
   filter(story == "ind")
@@ -131,10 +130,8 @@ describe(emotions_ind) # sd = 6.58
 describe(emotions_gen) # sd = 5.46
 
 ###
-# H3: Priming Effects
-shapiro.test(Eda_summary$eda_arousal_min) # p-value = 0.005839 **
+# H3: Priming Effects (Electrodermal Activity)
 shapiro.test(Eda_summary$amp_per_min) # p-value = 0.005452 **
-shapiro.test(Eda_summary$n_amp_per_min) # p-value = 0.4288 normal
 shapiro.test(Eda_summary$max_peak) # p-value = 0.008969 **
 shapiro.test(Eda_summary$max_amp_sum) # p-value = 0.1516 normal
 shapiro.test(Eda_summary$viewtime_sec) # p-value = 0.7293 normal
